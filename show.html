@@ -1,207 +1,56 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8">
+        <meta charset='utf-8'>
+		<link rel='stylesheet' href='showstyle.css'>
     </head>
-	<style>
-		.topbuttonrow
-		{
-		background-color: orange;
-		height: 100%;
-		margin-left:20%;
-		margin-right:20%;
-		}
-		
-		a{text-decoration: none;}
-
-		.infotext
-		{
-			font-family: "Verdana", Sans-serif;
-			font-size: 10px !important;
-			padding: 4px;
-		}
-		.infotext span
-		{
-			font-family: "Verdana", Sans-serif;
-			font-size: 10px !important;
-			font-weight: bold;
-		}
-		.infohead
-		{
-			font-size: 14px !important;
-			font-family: Serif;
-			font-weight: bold;
-			background-color: #f1f1f1;
-		}		
-		.infobox
-		{
-			outline-style: double;
-			width: 90%;
-			margin-left: 5%;
-			margin-bottom: 3px;
-		}
-		
-
-		
-		.centercolumn *
-		{font-size: 20px;}
-
-		.centercolumn
-		{
-		display: flex;
-		background-color: orange;
-		height: 100%;
-		margin-left:10%;
-		margin-right:10%;
-		padding:0;
-		font-size:0;
-		}
-		
-		body{margin:0;}
-		
-		
-		header
-		{
-		position:relative;
-		height:15%;
-		width: 100%;
-		display: inline-block;
-		background-color:pink;
-		}
-		
-		.half
-		{
-		position:relative;
-		height:100%;
-		width: 50%;
-		margin: 0;
-		padding: 10px;
-		max-height: 600px;
-		display: inline-block;
-		text-align: center;
-		}
-		
-		
-		nav a:hover
-		{
-		background-color:red;
-		}
-		
-		nav a
-		{
-		display: inline-block;
-		height: 100%;
-		width: 20%;
-		margin: 0px 0px 0px 0px;
-		padding-left:2.5%;
-		padding-right:2.5%;
-		text-align: center;
-		vertical-align: middle;
-		background-color:pink;
-		font-size:20px;
-		}
-		
-		nav
-		{
-		height: 50px;
-		font-size:0;
-		}
-
-		#table_shell{
-		margin: auto;
-		width: 420px;}
-		
-		table{border-collapse: collapse;}
-		
-		#fixed_table{
-		background-color: gray;
-		width: 418px;}
-		
-		#fixed_table thead tr th
-		{border: 1px solid black;
-		padding-left:0;
-		padding-right:0;}
-		
-		#scroll_table{
-		display: block;
-		background-color: white;
-		width: 418px;
-		max-height: 455px;
-		overflow-y: scroll;
-		overflow-x: hidden;
-		border-left: 1px solid black;
-		border-bottom: 1px solid black;
-		}
-		
-		#scroll_table tbody tr td{
-		border: 1px solid black;
-		border-top-style: none;
-		padding-left:0;
-		padding-right:0;
-		}
-		
-		#scroll_table tbody{
-		width: 100%;
-		display: inline-table;
-		}
-		
-		#scroll_table tbody tr td:nth-child(1),
-		#fixed_table thead tr th:nth-child(1)
-		{width:139px;}
-		#scroll_table tbody tr td:nth-child(2),
-		#fixed_table thead tr th:nth-child(2)
-		{width:77px;}
-		#scroll_table tbody tr td:nth-child(3)
-		{padding-left: 4px;
-		text-align: left;}
-	</style>
     <body>
 		<header>
 			<!--Not supported in internet explorer 8 or below-->
-			<div class="topbuttonrow">
+			<div class='topbuttonrow'>
 				<nav>
-					<a href="/html/">Home</a>
-					<a href="/css/">Special Search</a>
-					<a href="/js/">Standard Search</a>
-					<a href="/jquery/">Your Team</a>
+					<a href='/html/'>Home</a>
+					<a href='/css/'>Special Search</a>
+					<a href='/js/'>Standard Search</a>
+					<a href='/jquery/'>Your Team</a>
 				</nav>
 			</div>
 		</header>
-        <div class="centercolumn">
-		    <div class="half" style="background-color: #ffbbb1;">
-				<div style="background-color: #ffeca9;">
-					<h1 style="margin: 0;">Lorem</h1>
+        <div class='centercolumn'>
+		    <div class='half' style='background-color: #ffbbb1;'>
+				<div style='background-color: #ffeca9;'>
+					<h1 style='margin: 0;'>Lorem</h1>
 				</div>
-				<div style="background-color: #c7e8ac;">
-					<img src="diamond-pearl/405.png" width="160" height="160">
+				<div style='background-color: #c7e8ac;'>
+					<img src='diamond-pearl/405.png' width='160' height='160'>
 				</div>
-				<div style="background-color: #c1e4f7; padding-top: 10px; padding-bottom: 10px;">
-					<div class="infobox">					
-						<div class="infohead">Types</div>
-						<a href="https://www.w3schools.com" class="middletext">
-						<div class="infotext">
+				<div style='background-color: #c1e4f7; padding-top: 10px; padding-bottom: 10px;'>
+					<div class='infobox'>					
+						<div class='infohead'>Types</div>
+						<a href='https://www.w3schools.com' class='middletext'>
+						<div class='infotext'>
 						Electric
 						</div>
 						</a>
 					</div>
-					<div class="infobox">
-						<div class="infohead">Pokedex Entry</div>
-						<div class="infotext">
+					<div class='infobox'>
+						<div class='infohead'>Pokedex Entry</div>
+						<div class='infotext'>
 						It has eyes that can see through anything. It spots and captures prey hiding behind objects.
 						</div>
 					</div>
-					<div class="infobox">
-						<div class="infohead">Locations</div>
-						<div class="infotext">
+					<div class='infobox'>
+						<div class='infohead'>Locations</div>
+						<div class='infotext'>
 						Evolve from Luxio
 						</div>
 					</div>
-					<div class="infobox">
-						<div class="infohead">Abilities</div>
-						<div class="infotext">
+					<div class='infobox'>
+						<div class='infohead'>Abilities</div>
+						<div class='infotext'>
 						<span>Rivalry</span>: Attack & Special Attack is increased by 25% if the foe is of the same gender; Attack & Special Attack is decreased by 25% if the foe is of the opposite gender.
 						</div>
-						<div class="infotext">
+						<div class='infotext'>
 						<span>Intimidate</span>: Upon entering battle, the opponent’s Attack lowers one stage. In a Double Battle, both opponents’ Attack are lowered. Pokémon with the Clear Body, Hyper Cutter, or White Smoke ability are unaffected. In a link battle, if both sides switch on the same turn, and first player sends out a Pokémon with Intimidate, the opponent’s Attack will be lowered before the opponent’s Pokémon switches.
 						</div>
 					</div>
@@ -210,9 +59,9 @@
 				
 				
 			</div>
-		    <div class="half" style="background-color: #3aa6dd;">
-				<div id="table_shell">
-					<table id="fixed_table">
+		    <div class='half' style='background-color: #3aa6dd;'>
+				<div id='table_shell'>
+					<table id='fixed_table'>
 						<thead>
 							<tr>
 								<th>Move</th>
@@ -221,7 +70,7 @@
 							</tr>
 						</thead>
 					</table>
-					<table id="scroll_table">
+					<table id='scroll_table'>
 						<tbody>
 							<tr>
 								<td>Tackle</td><td>35</td><td>Level:—</td>
