@@ -33,10 +33,11 @@
 							} else { echo "pokemon id not found.";}
 
 							$pokeid = 405;
-							$query1 = "SELECT poke_name, poke_type1, poke_type2, abil_name1, abil_name2, location, pokedexText FROM `pokemon` WHERE national_id =" . $pokeid;
-							if ($result = $mysqli->query($query1)) {
+							$query1 = "SELECT poke_name, poke_type1, poke_type2, abil_name1, abil_name2, abil1.abil_text AS abil_text1, abil2.abil_text AS abil_text2, location, pokedexText FROM `pokemon`,(SELECT abil_text FROM `abilities`, `pokemon` WHERE national_id=" . $pokeid . " AND abil_name1=abil_name)abil1, 
+(SELECT abil_text FROM `abilities`, `pokemon` WHERE national_id=" . $pokeid . " AND abil_name2=abil_name)abil2 WHERE national_id =" . $pokeid;
+							if ($result1 = $mysqli->query($query1)) {
 								/* fetch associative array */
-								if ($row = $result->fetch_assoc()) {
+								if ($row = $result1->fetch_assoc()) {
 									printf ("<h1 style='margin: 0;'>");
 									printf ($row["poke_name"]);
 									echo "</h1></div><div style='background-color: #c7e8ac;'><img src='diamond-pearl/405.png' width='160' height='160'></div><div style='background-color: #c1e4f7; padding-top: 10px; padding-bottom: 10px;'><div class='infobox'><div class='infohead'>Types</div>";
@@ -49,23 +50,20 @@
 									
 									echo "<div class='infobox'><div class='infohead'>Abilities</div><div class='infotext'>";
 									echo "<span>" . $row["abil_name1"] . "</span>: ";
+									echo $row["abil_text1"] . "</div>";
+									if (!empty($row["abil_name2"])){
+										printf("<div class='infotext'><span>" . $row["abil_name2"] . "</span>: " . $row["abil_text2"] . "</div>");}
+									
 									
 									
 									
 								}
 								/* free result set */
-								$result->free();
+								$result1->free();
 							}
 							/* close connection */
 							$mysqli->close();
 						?>
-						
-					
-						<span>Rivalry</span>: Attack & Special Attack is increased by 25% if the foe is of the same gender; Attack & Special Attack is decreased by 25% if the foe is of the opposite gender.
-						</div>
-						<div class='infotext'>
-						<span>Intimidate</span>: Upon entering battle, the opponent’s Attack lowers one stage. In a Double Battle, both opponents’ Attack are lowered. Pokémon with the Clear Body, Hyper Cutter, or White Smoke ability are unaffected. In a link battle, if both sides switch on the same turn, and first player sends out a Pokémon with Intimidate, the opponent’s Attack will be lowered before the opponent’s Pokémon switches.
-						</div>
 					</div>
 				</div>
 
