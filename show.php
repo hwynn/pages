@@ -27,10 +27,14 @@
 								printf("Connect failed: %s\n", $mysqli->connect_error);
 								exit();
 							}
+							
+							if (isset($_GET['pokeid'])) {
+								echo $_GET['pokeid'];
+							} else { echo "pokemon id not found.";}
 
 							$pokeid = 405;
-							$query = "SELECT poke_name, poke_type1, poke_type2, abil_name1, abil_name2, location, pokedexText FROM `pokemon` WHERE national_id =" . $pokeid;
-							if ($result = $mysqli->query($query)) {
+							$query1 = "SELECT poke_name, poke_type1, poke_type2, abil_name1, abil_name2, location, pokedexText FROM `pokemon` WHERE national_id =" . $pokeid;
+							if ($result = $mysqli->query($query1)) {
 								/* fetch associative array */
 								if ($row = $result->fetch_assoc()) {
 									printf ("<h1 style='margin: 0;'>");
@@ -39,30 +43,24 @@
 									printf ($row["poke_type1"]);
 									if (!empty($row["poke_type2"])){printf("        " . $row["poke_type2"]);}
 									echo "</div><div class='infobox'><div class='infohead'>Pokedex Entry</div><div class='infotext'>";
-									printf ();
+									printf ($row["pokedexText"]);
+									echo "</div></div>";
+									echo "<div class='infobox'><div class='infohead'>Locations</div><div class='infotext'>" . $row["location"] . "</div></div>";
+									
+									echo "<div class='infobox'><div class='infohead'>Abilities</div><div class='infotext'>";
+									echo "<span>" . $row["abil_name1"] . "</span>: ";
+									
+									
+									
 								}
-								
-
 								/* free result set */
 								$result->free();
 							}
 							/* close connection */
 							$mysqli->close();
 						?>
+						
 					
-					
-						It has eyes that can see through anything. It spots and captures prey hiding behind objects.
-						</div>
-					</div>
-					<div class='infobox'>
-						<div class='infohead'>Locations</div>
-						<div class='infotext'>
-						Evolve from Luxio
-						</div>
-					</div>
-					<div class='infobox'>
-						<div class='infohead'>Abilities</div>
-						<div class='infotext'>
 						<span>Rivalry</span>: Attack & Special Attack is increased by 25% if the foe is of the same gender; Attack & Special Attack is decreased by 25% if the foe is of the opposite gender.
 						</div>
 						<div class='infotext'>
