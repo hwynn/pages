@@ -29,13 +29,11 @@
 					}
 					if (isset($_GET['pokeid']))
 					{
-						
-						$c_breed = FALSE;//c_ is for conditional. This stores if the pokemon can breed
-						
 						$f_egg1 = "xxxx";
 						$f_egg2 = "yyyy";
 						
 						$query1 = "SELECT `egg_group1`, `egg_group2` FROM `pokemon` WHERE `national_id`=" . $_GET['pokeid'];
+						$query2 = "";
 						if($result1 = $mysqli->query($query1))
 						{
 							if ($trow = $result1->fetch_assoc()) 
@@ -60,7 +58,19 @@
 							if(is_null($f_egg2))
 							{
 								echo "this pokemon does not have a second egg group";
+								$query2 = "SELECT `poke_name`, `national_id`, `egg_group1`, `egg_group2` FROM `pokemon` WHERE `national_id`<>" . $_GET['pokeid'] . 
+								" AND (`egg_group2`= \"" . $f_egg1 . 
+								"\" OR  `egg_group1` = \"" . $f_egg1 . "\")";
 							}
+							else
+							{
+								$query2 = "SELECT `poke_name`, `national_id`, `egg_group1`, `egg_group2` FROM `pokemon` WHERE `national_id`<>" . $_GET['pokeid'] . 
+								" AND (`egg_group2`= \"" . $f_egg1 . 
+								"\" OR  `egg_group1` = \"" . $f_egg1 . 
+								"\" OR  `egg_group2` = \"" . $f_egg2 . 
+								"\" OR  `egg_group1` = \"" . $f_egg2 . "\")";
+							}
+							echo '<br>' . $query2;
 						}
 						
 						
