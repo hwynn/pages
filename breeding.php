@@ -3,7 +3,7 @@
     <head>
         <meta charset='utf-8'>
 		<link rel='stylesheet' href='showstyle.css'>
-		<link rel='stylesheet' href='extrastyles1.css'>
+		<link rel='stylesheet' href='extrastyles2.css'>
     </head>
     <body>
 		<header>
@@ -18,7 +18,7 @@
 			</div>
 		</header>
         <div class='centercolumn'>
-		    <div class='half' style='background-color: #ffbbb1;'>	
+		    <div class='topinfo' style='background-color: #ffbbb1;'>	
 				<?php
 					include 'secret.php';
 					$mysqli = new mysqli($host, $user, $password, $database);
@@ -78,10 +78,11 @@
 						$mysqli->close();	
 					} else { echo "pokemon id not found.";}
 				?>
+				<div class="pokebox">
+					<img src="diamond-pearl/328.png" height="160" width="160">
+				</div>
 			</div>
-		    <div class='half' style='background-color: #3aa6dd;'>
 
-			</div>
 		</div>
 
     </body>

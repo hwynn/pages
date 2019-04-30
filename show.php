@@ -104,7 +104,7 @@
 								/* free result set */
 								$result3->free();
 							}
-							else { echo "bad result3?";}						
+							else { echo "bad result3?";}
 						}
 						
 						
