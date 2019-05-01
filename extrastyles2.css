@@ -28,11 +28,15 @@
 .topinfo
 {
 	font-size: 20px;
+	width: 100%;
+	text-align: center;
 }
 
 .pokebox
 {
 	background-color: #ffeca9;
+	margin-left: auto;
+	margin-right: auto;
 	width: 200px;
 	text-align: center;
 	font-size: 12px;
@@ -65,7 +69,16 @@ font-weight: bold;
 font-size: 40px;}
 
 .romancebox .pokebox, .plusbox
-{float: left;}
+{
+	float: left;
+	margin: 0;
+}
 .romancebox span
 {margin-left:40px;
 font-weight: bold;}
+
+.topinfo span
+{
+	margin-left: auto;
+	margin-right: auto;
+}
