@@ -71,15 +71,61 @@
 								"\" OR  `egg_group1` = \"" . $f_egg2 . "\")";
 							}
 							echo '<br>' . $query2;
+							
+							
+							
+							
+							if($result2 = $mysqli->query($query2))
+							{
+								while($row = $result2->fetch_assoc())
+								{
+									printf ("<br><tr><td>%s</td><td>%s</td><td>%s</td></tr>", $row["poke_name"], $row["national_id"], $row["national_id"]);
+								}
+								/* free result set */
+								$result1->free();
+							}
+							
+
+							
+							
+							
+							
 						}
-						
-						
 						/* close connection */
 						$mysqli->close();	
 					} else { echo "pokemon id not found.";}
 				?>
 				<div class="pokebox">
-					<img src="diamond-pearl/328.png" height="160" width="160">
+					<img src="diamond-pearl/328.png" >
+					<p>Trapinch</p>
+				</div>
+				<div class="romancebox">
+					<span>Slash</span>
+					<br>
+					<div class="pokebox">
+						<img src="diamond-pearl/328.png" >
+						<p>Trapinch</p>
+					</div>
+					<div class="plusbox">+</div>
+					<div class="pokebox">
+						<img src="diamond-pearl/328.png" >
+						<p>Trapinch</p>
+					</div>
+				</div>
+				<div class='romancebox'>
+					<span>Slash</span>
+					<br>
+					<div class='pokebox'>
+						<a href='https://people.eecs.ku.edu/~h701w409/eecs647/show.php?pokeid=328'>
+							<img src="diamond-pearl/328.png" >
+						</a>
+						<p>Trapinch</p>
+					</div>
+					<div class="plusbox">+</div>
+					<div class="pokebox">
+						<img src="diamond-pearl/328.png" >
+						<p>Trapinch</p>
+					</div>
 				</div>
 			</div>
 
