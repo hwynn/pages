@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset='utf-8'>
+		<meta charset="utf-8" />
 		<link rel='stylesheet' href='showstyle.css'>
 		<link rel='stylesheet' href='extrastyles1.css'>
     </head>
@@ -27,6 +27,7 @@
 						printf("Connect failed: %s\n", $mysqli->connect_error);
 						exit();
 					}
+					mysqli_set_charset($con,"utf8");
 					if (isset($_GET['pokeid']))
 					{
 						
@@ -62,7 +63,8 @@
 									echo "</h1></div><div style='background-color: #c7e8ac;'><img src='diamond-pearl/" . $_GET['pokeid'] . ".png' width='160' height='160'></div><div style='background-color: #c1e4f7; padding-top: 10px; padding-bottom: 10px;'><div class='infobox'><div class='infohead'>Types</div>";
 									printf ($row["poke_type1"]);
 									if (!empty($row["poke_type2"])){printf("        " . $row["poke_type2"]);}
-									echo "</div><div class='infobox'><div class='infohead'>Pokedex Entry</div><div class='infotext'>";
+									echo "</div><div class='infobox'><div class='infohead'>Pokédex Entry</div><div class='infotext'>";
+									$string = $row["pokedexText"];
 									printf ($row["pokedexText"]);
 									echo "</div></div>";
 									echo "<div class='infobox'><div class='infohead'>Locations</div><div class='infotext'>" . $row["location"] . "</div></div>";
@@ -90,7 +92,7 @@
 									echo "</h1></div><div style='background-color: #c7e8ac;'><img src='diamond-pearl/" . $_GET['pokeid'] . ".png' width='160' height='160'></div><div style='background-color: #c1e4f7; padding-top: 10px; padding-bottom: 10px;'><div class='infobox'><div class='infohead'>Types</div>";
 									printf ($row["poke_type1"]);
 									if (!empty($row["poke_type2"])){printf("        " . $row["poke_type2"]);}
-									echo "</div><div class='infobox'><div class='infohead'>Pokedex Entry</div><div class='infotext'>";
+									echo "</div><div class='infobox'><div class='infohead'>Pokédex Entry</div><div class='infotext'>";
 									printf ($row["pokedexText"]);
 									echo "</div></div>";
 									echo "<div class='infobox'><div class='infohead'>Locations</div><div class='infotext'>" . $row["location"] . "</div></div>";
@@ -155,6 +157,31 @@
 				?>
 			</div>
 		</div>
-
+		<?php
+			include 'secret.php';
+			$mysqli = new mysqli($host, $user, $password, $database);
+			/* check connection */
+			if ($mysqli->connect_errno) {
+				printf("Connect failed: %s\n", $mysqli->connect_error);
+				exit();
+			}
+			if (isset($_GET['pokeid'])) 
+			{
+				//previous
+				//next
+				
+				//breeding compatibility link
+				//
+				$query1 = "SELECT abil_text FROM `abilities`, `pokemon` WHERE national_id=" . $_GET['pokeid'] . " AND abil_name2=abil_name;";
+				echo "<div class='centercolumn'>";
+				echo "<div class='lowerhalf'>";
+				//echo "kjdashsdlkj";
+				echo "</div>";
+				echo "<div class='lowerhalf'>";
+				//echo "kajshfakjjhhgjhjhgj";
+				echo "</div>";
+				echo "</div>";
+			}
+		?>
     </body>
 </html>

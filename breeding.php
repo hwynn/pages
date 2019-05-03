@@ -104,8 +104,6 @@
 					} else { echo "pokemon id not found.";}
 				?>
 			</div>
-
 		</div>
-
     </body>
 </html>
