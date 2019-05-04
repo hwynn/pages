@@ -29,6 +29,11 @@
 					}
 					if (isset($_GET['pokeid']))
 					{
+						if (!filter_input(INPUT_GET, "pokeid", FILTER_VALIDATE_INT))
+						{
+						echo("int is not valid");
+						exit();
+						}
 						$f_egg1 = "xxxx";
 						$f_egg2 = "yyyy";
 						$f_pokemon = "missingno";
@@ -37,7 +42,7 @@
 						$query2 = "";
 						if($result1 = $mysqli->query($query1))
 						{
-							if ($trow = $result1->fetch_assoc()) 
+							if ($trow = $result1->fetch_assoc())
 							{
 								$f_egg1 = $trow["egg_group1"];
 								$f_egg2 = $trow["egg_group2"];

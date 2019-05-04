@@ -190,12 +190,22 @@
 				//
 				$query1 = "SELECT abil_text FROM `abilities`, `pokemon` WHERE national_id=" . $thispokeid . " AND abil_name2=abil_name;";
 				$pokeurl = "https://people.eecs.ku.edu/~h701w409/eecs647/show.php?pokeid=";
+				$breedurl = "https://people.eecs.ku.edu/~h701w409/eecs647/breeding.php?pokeid=";
 				echo "<div class='centercolumn'>";
 				echo "<div class='lowerhalf'>";
 				if(($thispokeid - 1)>0){echo "<div class='bottombutton' id='prevbutton' onclick=\"location.href='".$pokeurl.($thispokeid - 1)."'\">#".strval($thispokeid - 1)."</div>";}
 				if(($thispokeid + 1)<494){echo "<div class='bottombutton' id='nextbutton' onclick=\"location.href='".$pokeurl.($thispokeid + 1)."'\">#".strval($thispokeid + 1)."</div>";}
 				echo "</div>";
 				echo "<div class='lowerhalf'>";
+				$query1 = "SELECT `poke_name`, `egg_group1`, `egg_group2` FROM `pokemon` WHERE `national_id`=" . $_GET['pokeid'];
+				if($result1 = $mysqli->query($query1))
+				{
+					if ($trow = $result1->fetch_assoc()) 
+					{$f_egg1 = $trow["egg_group1"];}
+					$result1->free();
+				}
+				if(!is_null($f_egg1))
+				{echo "<div class='bottombutton' id='prevbutton' onclick=\"location.href='".$breedurl.$thispokeid."'\">Breeding</div>";}
 				//echo "kajshfakjjhhgjhjhgj";
 				echo "</div>";
 				echo "</div>";
