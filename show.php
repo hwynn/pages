@@ -30,7 +30,11 @@
 					mysqli_set_charset($con,"utf8");
 					if (isset($_GET['pokeid']))
 					{
-
+						if (!filter_input(INPUT_GET, "pokeid", FILTER_VALIDATE_INT))
+						{
+						echo("No valid id in url");
+						exit();
+						}
 						$c_abil2 = FALSE;//c_ is for conditional. This stores if the pokemon has a second ability
 						
 						$query1 = "SELECT abil_text FROM `abilities`, `pokemon` WHERE national_id=" . $_GET['pokeid'] . " AND abil_name2=abil_name;";
@@ -126,6 +130,11 @@
 					}
 					if (isset($_GET['pokeid'])) 
 					{
+						if (!filter_input(INPUT_GET, "pokeid", FILTER_VALIDATE_INT))
+						{
+						echo("int is not valid");
+						exit();
+						}
 						echo "<div id='table_shell'><table id='fixed_table'>
 						<thead>
 							<tr>
@@ -169,7 +178,13 @@
 			{
 				//$thispokeid = var_dump($_GET['pokeid']);
 				$thispokeid = strval($_GET['pokeid']);
-				//previous
+				if (!filter_input(INPUT_GET, "pokeid", FILTER_VALIDATE_INT))
+				{
+				echo("int is not valid");
+				exit();
+				}
+				//echo("int is valid");
+								//previous
 				//next
 				//breeding compatibility link
 				//
