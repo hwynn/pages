@@ -85,6 +85,12 @@ text-align: left;}
     border-radius: 10px;
 }
 
+.bottombutton:hover
+{
+	cursor: pointer;
+	background-color: darkturquoise;
+}
+
 #prevbutton
 {
 	display: inline-block;

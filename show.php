@@ -177,8 +177,8 @@
 				$pokeurl = "https://people.eecs.ku.edu/~h701w409/eecs647/show.php?pokeid=";
 				echo "<div class='centercolumn'>";
 				echo "<div class='lowerhalf'>";
-				echo "<div class='bottombutton' id='prevbutton' onclick=\"location.href='".$pokeurl.($thispokeid - 1)."'\">#".strval($thispokeid - 1)."</div>";
-				echo "<div class='bottombutton' id='nextbutton' onclick=\"location.href='".$pokeurl.($thispokeid + 1)."'\">#".strval($thispokeid + 1)."</div>";
+				if(($thispokeid - 1)>0){echo "<div class='bottombutton' id='prevbutton' onclick=\"location.href='".$pokeurl.($thispokeid - 1)."'\">#".strval($thispokeid - 1)."</div>";}
+				if(($thispokeid + 1)<494){echo "<div class='bottombutton' id='nextbutton' onclick=\"location.href='".$pokeurl.($thispokeid + 1)."'\">#".strval($thispokeid + 1)."</div>";}
 				echo "</div>";
 				echo "<div class='lowerhalf'>";
 				//echo "kajshfakjjhhgjhjhgj";
