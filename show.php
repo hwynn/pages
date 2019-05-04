@@ -30,7 +30,7 @@
 					mysqli_set_charset($con,"utf8");
 					if (isset($_GET['pokeid']))
 					{
-						
+
 						$c_abil2 = FALSE;//c_ is for conditional. This stores if the pokemon has a second ability
 						
 						$query1 = "SELECT abil_text FROM `abilities`, `pokemon` WHERE national_id=" . $_GET['pokeid'] . " AND abil_name2=abil_name;";
@@ -167,15 +167,18 @@
 			}
 			if (isset($_GET['pokeid'])) 
 			{
+				//$thispokeid = var_dump($_GET['pokeid']);
+				$thispokeid = strval($_GET['pokeid']);
 				//previous
 				//next
-				
 				//breeding compatibility link
 				//
-				$query1 = "SELECT abil_text FROM `abilities`, `pokemon` WHERE national_id=" . $_GET['pokeid'] . " AND abil_name2=abil_name;";
+				$query1 = "SELECT abil_text FROM `abilities`, `pokemon` WHERE national_id=" . $thispokeid . " AND abil_name2=abil_name;";
+				$pokeurl = "https://people.eecs.ku.edu/~h701w409/eecs647/show.php?pokeid=";
 				echo "<div class='centercolumn'>";
 				echo "<div class='lowerhalf'>";
-				//echo "kjdashsdlkj";
+				echo "<div class='bottombutton' id='prevbutton' onclick=\"location.href='".$pokeurl.($thispokeid - 1)."'\">#".strval($thispokeid - 1)."</div>";
+				echo "<div class='bottombutton' id='nextbutton' onclick=\"location.href='".$pokeurl.($thispokeid + 1)."'\">#".strval($thispokeid + 1)."</div>";
 				echo "</div>";
 				echo "<div class='lowerhalf'>";
 				//echo "kajshfakjjhhgjhjhgj";
