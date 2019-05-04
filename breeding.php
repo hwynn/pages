@@ -86,14 +86,14 @@
 									echo "<span>Slash</span>";
 									echo "<br>";
 									echo "<div class='pokebox'>";
-									echo "<a href='https://people.eecs.ku.edu/~h701w409/eecs647/show.php?pokeid=" . $_GET['pokeid'] . "'>";
+									echo "<a href='".$pokeurl. $_GET['pokeid'] . "'>";
 									echo "<img src='diamond-pearl/" . $_GET['pokeid'] . ".png'>";
 									echo "</a>";
 									echo "<p>" . $f_pokemon . "</p>";
 									echo "</div>";
 									echo "<div class='plusbox'>+</div>";
 									echo "<div class='pokebox'>";
-									echo "<a href='https://people.eecs.ku.edu/~h701w409/eecs647/show.php?pokeid=" . $row["national_id"] . "'>";
+									echo "<a href='".$pokeurl. $row["national_id"] . "'>";
 									echo "<img src='diamond-pearl/" . $row["national_id"] . ".png'>";
 									echo "</a>";
 									echo "<p>" . $row["poke_name"] . "</p>";

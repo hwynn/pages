@@ -101,3 +101,9 @@ text-align: left;}
 	display: inline-block;
 	float: right;
 }
+
+.leftbottombutton
+{
+	display: inline-block;
+	float: left;
+}

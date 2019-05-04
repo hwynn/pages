@@ -189,8 +189,7 @@
 				//breeding compatibility link
 				//
 				$query1 = "SELECT abil_text FROM `abilities`, `pokemon` WHERE national_id=" . $thispokeid . " AND abil_name2=abil_name;";
-				$pokeurl = "https://people.eecs.ku.edu/~h701w409/eecs647/show.php?pokeid=";
-				$breedurl = "https://people.eecs.ku.edu/~h701w409/eecs647/breeding.php?pokeid=";
+				
 				echo "<div class='centercolumn'>";
 				echo "<div class='lowerhalf'>";
 				if(($thispokeid - 1)>0){echo "<div class='bottombutton' id='prevbutton' onclick=\"location.href='".$pokeurl.($thispokeid - 1)."'\">#".strval($thispokeid - 1)."</div>";}
@@ -205,11 +204,12 @@
 					$result1->free();
 				}
 				if(!is_null($f_egg1))
-				{echo "<div class='bottombutton' id='prevbutton' onclick=\"location.href='".$breedurl.$thispokeid."'\">Breeding</div>";}
-				//echo "kajshfakjjhhgjhjhgj";
+				{echo "<div class='bottombutton leftbottombutton' onclick=\"location.href='".$breedurl.$thispokeid."'\">Breeding</div>";}
 				echo "</div>";
 				echo "</div>";
+				
 			}
+			$mysqli->close();
 		?>
     </body>
 </html>
