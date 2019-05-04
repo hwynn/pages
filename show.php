@@ -199,12 +199,20 @@
 				$query1 = "SELECT `poke_name`, `egg_group1`, `egg_group2` FROM `pokemon` WHERE `national_id`=" . $_GET['pokeid'];
 				if($result1 = $mysqli->query($query1))
 				{
-					if ($trow = $result1->fetch_assoc()) 
-					{$f_egg1 = $trow["egg_group1"];}
+					if ($row = $result1->fetch_assoc()) 
+					{$f_egg1 = $row["egg_group1"];}
 					$result1->free();
 				}
 				if(!is_null($f_egg1))
 				{echo "<div class='bottombutton leftbottombutton' onclick=\"location.href='".$breedurl.$thispokeid."'\">Breeding</div>";}
+			
+				$query2 = "SELECT `move_name`, `learn_method` FROM `learn`
+WHERE (learn_method='Egg Move' OR learn_method like 'Pre-Evolution Move: #% at ') AND national_id=" . $_GET['pokeid'];
+				if($result2 = $mysqli->query($query2))
+				{if ($row = $result2->fetch_assoc())//if this pokemon has any egg moves
+				{echo "<div class='bottombutton leftbottombutton' onclick=\"location.href='".$eggmoveurl.$thispokeid."'\">Egg Moves</div>";}
+				}
+				
 				echo "</div>";
 				echo "</div>";
 				
