@@ -3,6 +3,7 @@
     <head>
 		<meta charset="utf-8" />
 		<link rel='stylesheet' href='showstyle.css'>
+		<link rel='stylesheet' href='homestyle.css'>
     </head>
 	<body>
 		<header>
@@ -10,12 +11,36 @@
 			<div class='topbuttonrow'>
 				<nav>
 					<a href='/~h701w409/eecs647/home.html'>Home</a>
-					<a href='/~h701w409/eecs647/specialsearch.php'>Special Search</a>
 					<a href='/~h701w409/eecs647/standardsearch.php'>Standard Search</a>
+					<a href='/~h701w409/eecs647/specialsearch.php'>Special Search</a>
 					<a href='/~h701w409/eecs647/team.php'>Your Team</a>
 				</nav>
 			</div>
 		</header>
+		<div class='homebox'>
+			<div class='rowbox'>
+			<h1>Pokemon Search Tool</h1>
+			</div>
+			<div class='rowbox'>
+			<p>A tool for oddly specific searches and team planning for pokemon diamond and pearl.</p>
+			</div>
+			<img src='diamond-pearl/DiamondBoxart.jpg'>
+			<img src='diamond-pearl/PearlBoxart.jpg'>
+			<form action="/~h701w409/eecs647/show.php" style="margin-top: 30px;">
+				<div class='rowbox'>
+				Pokemon ID Lookup
+				</div>
+				<div class='rowbox'>
+				<input type="text" name="pokeid">
+				<input type="submit" value='Go'/>
+				</div>
+				<div class='rowbox'>
+				Enter ID# from 1-493
+				</div>
+			</form>
+			
+			
+		</div>
 		<!--jump to a number form-->
     </body>
 </html>

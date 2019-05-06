@@ -1,0 +1,36 @@
+tbody
+{
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+	border: 1px solid black;
+	border-spacing: 30px 10px;
+	width: 600px;
+	font-size: x-large;
+}
+th
+{
+	vertical-align: top;
+}
+
+.middlebox
+{	
+width: 340px;
+margin-right: auto;
+margin-left: auto;
+margin-top: 50px;
+padding-left: 20px;
+padding-right: 20px;
+padding-bottom: 30px;
+border: 4px groove grey;
+border-radius: 10px;
+
+}
+
+.rowbox h2
+{vertical-align: center;}
+
+h4
+{
+	margin-bottom: 4px;
+}
