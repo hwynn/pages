@@ -3,6 +3,7 @@
     <head>
 		<meta charset="utf-8" />
 		<link rel='stylesheet' href='showstyle.css'>
+		<link rel='stylesheet' href='movetable.css'>
     </head>
 	<body>
 		<header>
@@ -16,6 +17,29 @@
 				</nav>
 			</div>
 		</header>
-
+		<table>
+			<tbody>
+				<tr>
+					<th>Name</th>
+					<td>Absorb</td>
+				</tr>
+				<tr>
+					<th>Type</th>
+					<td>grass</td>
+				</tr>
+				<tr>
+					<th>Category</th>
+					<td>special</td>
+				</tr>
+				<tr>
+					<th>Power</th>
+					<td>20</td>
+				</tr>
+				<tr>
+					<th>Description</th>
+					<td>A nutrient-draining attack. The user's HP is restored by half the damage taken by the target.</td>
+				</tr>
+			</tbody>
+		</table>
     </body>
 </html>
