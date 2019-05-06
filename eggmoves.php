@@ -38,6 +38,12 @@
 						$f_egg2 = "yyyy";
 						$f_pokemon = "missingno";
 						
+						
+						$f_breedquery = "";
+						$f_eggmovequery = "";
+						$f_fullquery="";
+						
+						
 						$query1 = "SELECT `poke_name`, `egg_group1`, `egg_group2` FROM `pokemon` WHERE `national_id`=" . $_GET['pokeid'];
 						$query2 = "";
 						if($result1 = $mysqli->query($query1))
@@ -56,34 +62,43 @@
 							$result1->free();
 						}
 						else
-						{ echo "We don't know what the egg groups are";}
+						{ 
+							echo "We don't know what the egg groups are";
+							exit();
+						}
 						if(is_null($f_egg1))
 						{
 							echo "<span>sorry. This pokemon cannot breed</span>";
+							exit();
 						}
 						else
 						{
 							if(is_null($f_egg2))
 							{
-								echo "this pokemon does not have a second egg group";
-								$query2 = "SELECT `poke_name`, `national_id`, `egg_group1`, `egg_group2` FROM `pokemon` WHERE `national_id`<>" . $_GET['pokeid'] . 
+								$f_breedquery = "(SELECT `poke_name`, `national_id`, `egg_group1`, `egg_group2` FROM `pokemon` WHERE `national_id`<>" . $_GET['pokeid'] . 
 								" AND (`egg_group2`= \"" . $f_egg1 . 
-								"\" OR  `egg_group1` = \"" . $f_egg1 . "\")";
+								"\" OR  `egg_group1` = \"" . $f_egg1 . "\"))breedable, ";
 							}
 							else
 							{
-								$query2 = "SELECT `poke_name`, `national_id`, `egg_group1`, `egg_group2` FROM `pokemon` WHERE `national_id`<>" . $_GET['pokeid'] . 
+								$f_breedquery = "(SELECT `poke_name`, `national_id`, `egg_group1`, `egg_group2` FROM `pokemon` WHERE `national_id`<>" . $_GET['pokeid'] . 
 								" AND (`egg_group2`= \"" . $f_egg1 . 
 								"\" OR  `egg_group1` = \"" . $f_egg1 . 
 								"\" OR  `egg_group2` = \"" . $f_egg2 . 
-								"\" OR  `egg_group1` = \"" . $f_egg2 . "\")";
+								"\" OR  `egg_group1` = \"" . $f_egg2 . "\"))breedable, ";
 							}
-							if($result2 = $mysqli->query($query2))
+							
+							$f_eggmovequery = "(SELECT `move_name`, `learn_method` FROM `learn` WHERE (learn_method='Egg Move' OR learn_method like 'Pre-Evolution Move: #% at ') AND national_id=". $_GET['pokeid'] .")eggmoves, ";
+							
+							$f_fullquery = "SELECT eggmoves.move_name, breedable.national_id, breedable.poke_name FROM " . $f_breedquery . $f_eggmovequery . "`allmoves` WHERE eggmoves.move_name=allmoves.move_name AND breedable.national_id=allmoves.national_id ORDER BY move_name";
+							
+							//echo $f_fullquery;
+							if($result2 = $mysqli->query($f_fullquery))
 							{
 								while($row = $result2->fetch_assoc())
 								{
 									echo "<div class='romancebox'>";
-									echo "<span>Slash</span>";
+									echo "<span>".$row['move_name']."</span>";
 									echo "<br>";
 									echo "<div class='pokebox'>";
 									echo "<a href='".$pokeurl. $_GET['pokeid'] . "'>";

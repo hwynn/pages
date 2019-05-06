@@ -31,7 +31,7 @@
 					{
 						if (!filter_input(INPUT_GET, "pokeid", FILTER_VALIDATE_INT))
 						{
-						echo("int is not valid");
+						echo "int is not valid";
 						exit();
 						}
 						$f_egg1 = "xxxx";
@@ -65,7 +65,7 @@
 						{
 							if(is_null($f_egg2))
 							{
-								echo "this pokemon does not have a second egg group";
+								//echo "this pokemon does not have a second egg group";
 								$query2 = "SELECT `poke_name`, `national_id`, `egg_group1`, `egg_group2` FROM `pokemon` WHERE `national_id`<>" . $_GET['pokeid'] . 
 								" AND (`egg_group2`= \"" . $f_egg1 . 
 								"\" OR  `egg_group1` = \"" . $f_egg1 . "\")";
@@ -83,8 +83,6 @@
 								while($row = $result2->fetch_assoc())
 								{
 									echo "<div class='romancebox'>";
-									echo "<span>Slash</span>";
-									echo "<br>";
 									echo "<div class='pokebox'>";
 									echo "<a href='".$pokeurl. $_GET['pokeid'] . "'>";
 									echo "<img src='diamond-pearl/" . $_GET['pokeid'] . ".png'>";
