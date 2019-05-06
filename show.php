@@ -149,7 +149,19 @@
 						if ($result = $mysqli->query($query)) {
 							/* fetch associative array */
 							while($row = $result->fetch_assoc()) {
-								printf ("<tr><td>%s</td><td>%s</td><td>%s</td></tr>", $row["movenm"], $row["power"], $row["learn_method"]);
+								echo "<tr>";
+								echo "<td>";
+								echo "<a href='".$moveurl.$row['movenm']."'>";
+								echo $row["movenm"];
+								echo "</a>";
+								echo "</td>";
+								echo "<td>";
+								echo $row["power"];
+								echo "</td>";
+								echo "<td>";
+								echo $row["learn_method"];
+								echo "</td>";
+								echo "</tr>";
 							}
 							
 							/*while ($row = $result->fetch_assoc()) {
