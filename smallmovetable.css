@@ -45,39 +45,3 @@ display: inline-table;
 #scroll_table tbody tr td:nth-child(3)
 {padding-left: 4px;
 text-align: left;}
-
-
-.bottombutton
-{
-    height: 30px;
-    width: 80px;
-    font-size: 16px;
-    text-align: center;
-    background-color: lightseagreen;
-    padding-top: 5px;
-    border-radius: 10px;
-}
-
-.bottombutton:hover
-{
-	cursor: pointer;
-	background-color: darkturquoise;
-}
-
-#prevbutton
-{
-	display: inline-block;
-	float: left;
-}
-#nextbutton
-{
-	display: inline-block;
-	float: right;
-}
-
-.leftbottombutton
-{
-	display: inline-block;
-	float: left;
-	margin-right: 20px;
-}

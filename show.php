@@ -2,9 +2,102 @@
 <html>
     <head>
 		<meta charset="utf-8" />
-		<link rel='stylesheet' href='navbarstyle.css'>
-		<link rel='stylesheet' href='showstyle.css'>
-		<link rel='stylesheet' href='extrastyles1.css'>
+		<link rel='stylesheet' href='commonstyle.css'>
+		<link rel='stylesheet' href='smallmovetable.css'>
+		<style>
+			.infotext
+			{
+				font-family: "Verdana", Sans-serif;
+				font-size: 10px;
+				padding: 4px;
+			}
+			.infotext span
+			{
+				font-family: "Verdana", Sans-serif;
+				font-size: 10px;
+				font-weight: bold;
+			}
+			.infohead
+			{
+				font-size: 14px;
+				font-family: Serif;
+				font-weight: bold;
+				background-color: #f1f1f1;
+			}		
+			.infobox
+			{
+				outline-style: double;
+				width: 90%;
+				margin-left: 5%;
+				margin-bottom: 3px;
+			}
+			
+			.half
+			{
+			position:relative;
+			height:100%;
+			width: 500px;
+			margin: 0;
+			padding: 10px;
+			margin-left: auto;
+			margin-right: auto;
+			max-height: 600px;
+			display: inline-block;
+			text-align: center;
+			}
+		
+			.lowerhalf
+			{
+			position:relative;
+			height:100px;
+			width: 50%;
+			margin: 0;
+			padding: 10px;
+			max-height: 600px;
+			display: inline-block;
+			text-align: center;
+			background-color: #f1f1f1;
+			}
+		
+			.bottombutton
+			{
+				height: 30px;
+				width: 80px;
+				font-size: 16px;
+				text-align: center;
+				background-color: lightseagreen;
+				padding-top: 5px;
+				border-radius: 10px;
+			}
+
+			.bottombutton:hover
+			{
+				cursor: pointer;
+				background-color: darkturquoise;
+			}
+
+			#prevbutton
+			{
+				display: inline-block;
+				float: left;
+			}
+			#nextbutton
+			{
+				display: inline-block;
+				float: right;
+			}
+
+			.leftbottombutton
+			{
+				display: inline-block;
+				float: left;
+				margin-right: 20px;
+			}
+			
+
+
+		</style>
+		
     </head>
     <body>
 		<header>

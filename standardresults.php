@@ -2,9 +2,8 @@
 <html>
     <head>
 		<meta charset="utf-8" />
-		<link rel='stylesheet' href='navbarstyle.css'>
-		<link rel='stylesheet' href='showstyle.css'>
-		<link rel='stylesheet' href='extrastyles3.css'>
+		<link rel='stylesheet' href='commonstyle.css'>
+		<link rel='stylesheet' href='bigresulttable.css'>
     </head>
     <body>
 		<header>

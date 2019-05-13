@@ -2,8 +2,7 @@
 <html>
     <head>
 		<meta charset="utf-8" />
-		<link rel='stylesheet' href='navbarstyle.css'>
-		<link rel='stylesheet' href='showstyle.css'>
+		<link rel='stylesheet' href='commonstyle.css'>
     </head>
 	<body>
 		<header>

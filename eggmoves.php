@@ -2,36 +2,8 @@
 <html>
     <head>
         <meta charset='utf-8'>
-		<link rel='stylesheet' href='navbarstyle.css'>
-		<link rel='stylesheet' href='showstyle.css'>
+		<link rel='stylesheet' href='commonstyle.css'>
 		<style>
-			.infotext
-			{
-				font-family: "Verdana", Sans-serif;
-				font-size: 10px;
-				padding: 4px;
-			}
-			.infotext span
-			{
-				font-family: "Verdana", Sans-serif;
-				font-size: 10px;
-				font-weight: bold;
-			}
-			.infohead
-			{
-				font-size: 14px;
-				font-family: Serif;
-				font-weight: bold;
-				background-color: #f1f1f1;
-			}		
-			.infobox
-			{
-				outline-style: double;
-				width: 90%;
-				margin-left: 5%;
-				margin-bottom: 3px;
-			}
-
 			.topinfo
 			{
 				font-size: 20px;
