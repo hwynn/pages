@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
     <head>
+		<title>Pokémon Planner</title>
 		<meta charset="utf-8" />
+		<meta name="author" content="Harrison E. Wynn">
 		<link rel='stylesheet' href='commonstyle.css'>
 		<link rel='stylesheet' href='smallmovetable.css'>
 		<style>
@@ -107,7 +109,7 @@
 					<a href='/~h701w409/eecs647/home.html'>Home</a>
 					<a href='/~h701w409/eecs647/standardsearch.php'>Standard Search</a>
 					<a href='/~h701w409/eecs647/specialsearch.php'>Special Search</a>
-					<a href='/~h701w409/eecs647/team.php'>Your Team</a>
+					<a href='/~h701w409/eecs647/credit.html'>Credit</a>
 				</nav>
 			</div>
 		</header>

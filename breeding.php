@@ -74,7 +74,7 @@
 					<a href='/~h701w409/eecs647/home.html'>Home</a>
 					<a href='/~h701w409/eecs647/standardsearch.php'>Standard Search</a>
 					<a href='/~h701w409/eecs647/specialsearch.php'>Special Search</a>
-					<a href='/~h701w409/eecs647/team.php'>Your Team</a>
+					<a href='/~h701w409/eecs647/credit.html'>Credit</a>
 				</nav>
 			</div>
 		</header>

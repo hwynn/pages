@@ -71,7 +71,7 @@
 					<a href='/~h701w409/eecs647/home.html'>Home</a>
 					<a href='/~h701w409/eecs647/standardsearch.php'>Standard Search</a>
 					<a href='/~h701w409/eecs647/specialsearch.php'>Special Search</a>
-					<a href='/~h701w409/eecs647/team.php'>Your Team</a>
+					<a href='/~h701w409/eecs647/credit.html'>Credit</a>
 				</nav>
 			</div>
 		</header>
@@ -156,7 +156,9 @@
 								while($row = $result2->fetch_assoc())
 								{
 									echo "<div class='romancebox'>";
+									echo "<a href='".$moveurl.$row['move_name']."'>";
 									echo "<span>".$row['move_name']."</span>";
+									echo "</a>";
 									echo "<br>";
 									echo "<div class='pokebox'>";
 									echo "<a href='".$pokeurl. $_GET['pokeid'] . "'>";
