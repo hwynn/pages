@@ -108,7 +108,7 @@
 							while($row = $result->fetch_assoc()) {
 								echo "<tr>";
 								echo "<td>";
-								echo "<a href='".$moveurl.$row['national_id']."'>";
+								echo "<a href='".$pokeurl.$row['national_id']."'>";
 								echo $row["poke_name"];
 								echo "</a>";
 								echo "</td>";

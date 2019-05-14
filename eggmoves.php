@@ -3,65 +3,7 @@
     <head>
         <meta charset='utf-8'>
 		<link rel='stylesheet' href='commonstyle.css'>
-		<style>
-			.topinfo
-			{
-				font-size: 20px;
-				width: 100%;
-				text-align: center;
-			}
-
-			.pokebox
-			{
-				background-color: #ffeca9;
-				margin-left: auto;
-				margin-right: auto;
-				width: 200px;
-				text-align: center;
-				font-size: 12px;
-			}
-
-			.pokebox img
-			{
-				height: 160px;
-				width: 160px;
-			}
-
-			.pokebox img, p
-			{
-				margin-left: auto;
-				margin-right: auto;
-				margin-top: 0px;
-				margin-bottom: 0px;
-			}
-
-			.romancebox
-			{
-				margin: 10px;
-				padding: 0;
-				height: 230px;
-				width: 430px;
-			}
-			.plusbox 
-			{padding-top: 75px;
-			font-weight: bold;
-			font-size: 40px;}
-
-			.romancebox .pokebox, .plusbox
-			{
-				float: left;
-				margin: 0;
-			}
-			.romancebox span
-			{margin-left:40px;
-			font-weight: bold;}
-
-			.topinfo span
-			{
-				margin-left: auto;
-				margin-right: auto;
-			}
-		</style>
+		<link rel='stylesheet' href='romancestyle.css'>
     </head>
     <body>
 		<header>
@@ -76,7 +18,7 @@
 			</div>
 		</header>
         <div class='centercolumn'>
-		    <div class='topinfo' style='background-color: #ffbbb1;'>	
+		    <div class='topinfo'>	
 				<?php
 					include 'secret.php';
 					$mysqli = new mysqli($host, $user, $password, $database);
