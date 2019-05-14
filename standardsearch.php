@@ -50,7 +50,7 @@
 					<option value='dark' style='background-color: #705746;'>dark</option>
 					<option value='dragon' style='background-color: #6F35FC;'>dragon</option>
 					<option value='electric' style='background-color: #F7D02C;'>electric</option>
-					<option value='fight' style='background-color: #C22E28;'>fight</option>
+					<option value='fighting' style='background-color: #C22E28;'>fighting</option>
 					<option value='fire' style='background-color: #EE8130;'>fire</option>
 					<option value='flying' style='background-color: #A98FF3;'>flying</option>
 					<option value='ghost' style='background-color: #735797;'>ghost</option>
@@ -71,7 +71,7 @@
 					<option value='dark' style='background-color: #705746;'>dark</option>
 					<option value='dragon' style='background-color: #6F35FC;'>dragon</option>
 					<option value='electric' style='background-color: #F7D02C;'>electric</option>
-					<option value='fight' style='background-color: #C22E28;'>fight</option>
+					<option value='fighting' style='background-color: #C22E28;'>fighting</option>
 					<option value='fire' style='background-color: #EE8130;'>fire</option>
 					<option value='flying' style='background-color: #A98FF3;'>flying</option>
 					<option value='ghost' style='background-color: #735797;'>ghost</option>
