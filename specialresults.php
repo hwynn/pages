@@ -91,13 +91,27 @@
 				{
 					if($_GET['specialsearchtype']=='rareabil')
 					{
-						$fullquery = "SELECT `national_id`, `poke_name`, `poke_type1`, `poke_type2`, `abil_name1`, `abil_name2` FROM `pokemon`";
+						//$fullquery = "SELECT `national_id`, `poke_name`, `poke_type1`, `poke_type2`, `abil_name1`, `abil_name2` FROM `pokemon`";
+						$fullquery = "SELECT p.national_id, p.poke_name, a.abil_name AS ability, abcount, poke_type1, poke_type2
+						FROM (pokemon p
+						INNER JOIN abilities a ON p.abil_name1 = a.abil_name
+						OR p.abil_name2 = a.abil_name),
+						(SELECT abil_name, COUNT(*) AS abcount
+						FROM pokemon p
+						INNER JOIN abilities x ON p.abil_name1 = abil_name
+						OR p.abil_name2 = abil_name
+						GROUP BY abil_name) r
+						WHERE r.abil_name = a.abil_name ";
 						if (!empty($nameclause) and !empty($typeclause))
-						{$fullquery = $fullquery . " WHERE " . $nameclause . " AND " . $typeclause . ";";}
+						{$fullquery = $fullquery . " AND " . $nameclause . " AND " . $typeclause;}
 						elseif(empty($nameclause) and empty($typeclause))
-						{$fullquery = $fullquery . ";";}
+						{;}
 						else//one clause should be empty, so we concat both together
-						{$fullquery = $fullquery . " WHERE " . $nameclause . $typeclause . ";";}
+						{$fullquery = $fullquery . " AND " . $nameclause . $typeclause;}
+						$fullquery = $fullquery . " ORDER BY abcount ASC, national_id ASC;";
+						echo $fullquery;
+						
+						
 						echo "<div id='table_shell'><table id='fixed_table'>
 						<thead>
 							<tr>
@@ -125,8 +139,8 @@
 								echo "</td>";
 								echo "<td>".$row["poke_type1"]."</td>";
 								echo "<td>".$row["poke_type2"]."</td>";
-								echo "<td>".$row["abil_name1"]."</td>";
-								echo "<td>".$row["abil_name2"]."</td>";
+								echo "<td>".$row["ability"]."</td>";
+								echo "<td>".$row["abcount"]."</td>";
 								echo "</tr>";
 							}
 							/* free result set */
@@ -193,7 +207,7 @@
 						FROM pokemon p
 						INNER JOIN allmoves a ON a.national_id = p.national_id
 						WHERE (a.move_name='Fissure' OR a.move_name='Guillotine' OR a.move_name='Horn Drill' OR a.move_name='Sheer Cold')";
-						echo $fullquery;			
+									
 						
 						if (!empty($nameclause) and !empty($typeclause))
 						{$fullquery = $fullquery . " AND " . $nameclause . " AND " . $typeclause . ";";}
@@ -201,7 +215,6 @@
 						{$fullquery = $fullquery . ";";}
 						else//one clause should be empty, so we concat both together
 						{$fullquery = $fullquery . " AND " . $nameclause . $typeclause . ";";}
-						
 						
 						echo "<div id='table_shell'><table id='fixed_table'>
 						<thead>
