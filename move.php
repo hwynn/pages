@@ -7,6 +7,10 @@
 		<link rel='stylesheet' href='commonstyle.css'>
 		<link rel='stylesheet' href='movetable.css'>
 		<link rel='stylesheet' href='smallmovetable.css'>
+		<style>
+			.centercolumn{background-color: rgba(0,0,0,0.0);}
+		</style>
+		
     </head>
 	<body>
 		<header>
@@ -20,7 +24,8 @@
 				</nav>
 			</div>
 		</header>
-		<div class='half' style='background-color: #ffbbb1;'>	
+		<div class='centercolumn'>
+		<div class='half'>	
 		<table id='summarybox'>
 			<tbody>
 				<?php
@@ -73,7 +78,7 @@
 			</tbody>
 		</table>
 		</div>
-		<div class='half' style='background-color: #3aa6dd;'>
+		<div class='half'>
 				<?php
 					include 'secret.php';
 					$mysqli = new mysqli($host, $user, $password, $database);
@@ -128,6 +133,7 @@
 						$mysqli->close();
 					} else { echo "move name not found.";}
 				?>
+			</div>
 			</div>
 		
 		

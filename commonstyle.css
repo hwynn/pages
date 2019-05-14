@@ -6,7 +6,7 @@ a{text-decoration: none;}
 .centercolumn
 {
 display: flex;
-background-color: orange;
+background-color: #c1e4f7;
 height: 100%;
 margin-left:10%;
 margin-right:10%;
@@ -16,6 +16,21 @@ font-size:0;
 
 body{margin:0;}
 
+			
+.half
+{
+position:relative;
+height:100%;
+width: 500px;
+margin: 0;
+padding: 10px;
+margin-left: auto;
+margin-right: auto;
+max-height: 600px;
+display: inline-block;
+text-align: center;
+}
+		
 
 header
 {
@@ -23,12 +38,12 @@ position:relative;
 height:15%;
 width: 100%;
 display: inline-block;
-background-color:pink;
+background-color: gainsboro;
 }
 
 .topbuttonrow
 {
-background-color: orange;
+background-color: gainsboro;
 height: 100%;
 margin-left:20%;
 margin-right:20%;
@@ -36,7 +51,8 @@ margin-right:20%;
 
 nav a:hover
 {
-background-color:red;
+background-color:blue;
+color: black;
 }
 
 nav a
@@ -44,12 +60,10 @@ nav a
 display: inline-block;
 height: 100%;
 width: 20%;
-margin: 0px 0px 0px 0px;
+line-height: 45px;
 padding-left:2.5%;
 padding-right:2.5%;
 text-align: center;
-vertical-align: middle;
-background-color:pink;
 font-size:20px;
 }
 

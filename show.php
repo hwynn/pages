@@ -33,25 +33,11 @@
 				margin-left: 5%;
 				margin-bottom: 3px;
 			}
-			
-			.half
-			{
-			position:relative;
-			height:100%;
-			width: 500px;
-			margin: 0;
-			padding: 10px;
-			margin-left: auto;
-			margin-right: auto;
-			max-height: 600px;
-			display: inline-block;
-			text-align: center;
-			}
-		
+
 			.lowerhalf
 			{
 			position:relative;
-			height:100px;
+			height:36px;
 			width: 50%;
 			margin: 0;
 			padding: 10px;
@@ -114,7 +100,7 @@
 			</div>
 		</header>
         <div class='centercolumn'>
-		    <div class='half' style='background-color: #ffbbb1;'>	
+		    <div class='half'>	
 				<?php
 					include 'secret.php';
 					$mysqli = new mysqli($host, $user, $password, $database);
@@ -158,9 +144,9 @@
 							{
 								/* fetch associative array */
 								if ($row = $result2->fetch_assoc()) {
-									printf ("<div style='background-color: #ffeca9;'><h1 style='margin: 0;'>");
+									printf ("<div><h1 style='margin: 0;'>");
 									printf ($row["poke_name"]);
-									echo "</h1></div><div style='background-color: #c7e8ac;'><img src='diamond-pearl/" . $_GET['pokeid'] . ".png' width='160' height='160'></div><div style='background-color: #c1e4f7; padding-top: 10px; padding-bottom: 10px;'><div class='infobox'><div class='infohead'>Types</div>";
+									echo "</h1></div><div><img src='diamond-pearl/" . $_GET['pokeid'] . ".png' width='160' height='160'></div><div style='background-color: #c1e4f7; padding-top: 10px; padding-bottom: 10px;'><div class='infobox'><div class='infohead'>Types</div>";
 									printf ($row["poke_type1"]);
 									if (!empty($row["poke_type2"])){printf("        " . $row["poke_type2"]);}
 									echo "</div><div class='infobox'><div class='infohead'>Pokédex Entry</div><div class='infotext'>";
@@ -187,9 +173,9 @@
 							{
 								/* fetch associative array */
 								if ($row = $result3->fetch_assoc()) {
-									printf ("<div style='background-color: #ffeca9;'><h1 style='margin: 0;'>");
+									printf ("<div><h1 style='margin: 0;'>");
 									printf ($row["poke_name"]);
-									echo "</h1></div><div style='background-color: #c7e8ac;'><img src='diamond-pearl/" . $_GET['pokeid'] . ".png' width='160' height='160'></div><div style='background-color: #c1e4f7; padding-top: 10px; padding-bottom: 10px;'><div class='infobox'><div class='infohead'>Types</div>";
+									echo "</h1></div><div><img src='diamond-pearl/" . $_GET['pokeid'] . ".png' width='160' height='160'></div><div style='background-color: #c1e4f7; padding-top: 10px; padding-bottom: 10px;'><div class='infobox'><div class='infohead'>Types</div>";
 									printf ($row["poke_type1"]);
 									if (!empty($row["poke_type2"])){printf("        " . $row["poke_type2"]);}
 									echo "</div><div class='infobox'><div class='infohead'>Pokédex Entry</div><div class='infotext'>";
@@ -215,7 +201,7 @@
 					} else { echo "pokemon id not found.";}
 				?>
 			</div>
-		    <div class='half' style='background-color: #3aa6dd;'>
+		    <div class='half'>
 				<?php
 					include 'secret.php';
 					$mysqli = new mysqli($host, $user, $password, $database);
